@@ -1,0 +1,197 @@
+<link rel="stylesheet" href="plugins/dialog/dialog.css" />
+<link rel="stylesheet" href="css/button.css" />
+<link rel="stylesheet" href="css/todo/todo.css" />
+
+<div id="module_wrapper">
+	<div class="pure-g-r">
+		<header id="todo_header">
+			<div class="pure-u">
+				<h3>你好，&nbsp;<span id="span_nickname"></span></h3>
+				<p>
+					当前时间：&nbsp;<span id="span_date"></span>
+				</p>
+			</div>
+			<div class="pure-u">
+				<button class="pure-button" rel="dialog-toggle" href="#user_dialog">
+					设置
+				</button>
+			</div>
+		</header>
+	</div>
+	<div class="pure-g-r">
+		<form>
+			<table id="todo_table" class="pure-table">
+				<caption>
+					未完成列表
+				</caption>
+				<thead>
+					<tr>
+						<th class="td-check">
+						<input type="checkbox" class="check-all" data-name="select" />
+						</th>
+						<th class="td-title">标题</th>
+						<th class="td-progress">进度</th>
+						<th class="td-date">新增日期</th>
+						<th class="td-caution">提醒</th>
+						<th class="td-action">操作</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="6">
+						<button id="btn_delete" class="pure-button pure-button-error">
+							删除
+						</button>
+						<button id="btn_complete" class="pure-button pure-button-success">
+							完成
+						</button>
+						<button class="pure-button pure-button-secondary" rel="dialog-toggle" href="#create_dialog">
+							新增
+						</button></td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
+
+	<div class="pure-g-r">
+		<form>
+			<table id="done_table" class="pure-table">
+				<caption>
+					已完成列表
+				</caption>
+				<thead>
+					<tr>
+						<th class="td-check">
+						<input type="checkbox" class="check-all" data-name="select" />
+						</th>
+						<th class="td-title">标题</th>
+						<th class="td-date">完成日期</th>
+						<th class="td-summary">总结</th>
+						<th class="td-action">操作</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="5">
+						<button id="btn_delete" class="pure-button pure-button-error">
+							删除
+						</button>
+						<button id="btn_unmake" class="pure-button pure-button-warning">
+							撤回
+						</button></td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</div>
+
+	<div id="user_dialog" class="dialog">
+		<div class="dialog-wrapper">
+			<form id="user_form" class="pure-form pure-form-aligned">
+				<legend>
+					用户信息设置
+				</legend>
+				<fieldset>
+					<div class="pure-control-group">
+						<label for="input_nickname">昵称</label>
+						<input id="input_nickname" name="nickname" type="text" placeholder="..." required />
+					</div>
+				</fieldset>
+				<fieldset>
+					<button class="pure-button" rel="dialog-close">
+						关闭
+					</button>
+					<button type="submit" class="pure-button pure-button-primary">
+						确定
+					</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+    <div id="create_dialog" class="dialog">
+        <div class="dialog-wrapper">
+            <form id="create_form" class="pure-form pure-form-aligned">
+                <legend>
+                    新增代办事项
+                </legend>
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="input_title">标题</label>
+                        <input id="input_title" name="title" type="text" placeholder="..." required />
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="input_caution">提醒</label>
+                        <textarea id="input_caution" name="caution" type="text" placeholder="..." rows="4"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <button class="pure-button" rel="dialog-close">
+                        关闭
+                    </button>
+                    <button type="submit" class="pure-button pure-button-primary">
+                        确定
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div id="check_dialog" class="dialog">
+        <div class="dialog-wrapper">
+            <form id="check_form" class="pure-form pure-form-aligned">
+                <legend>
+                    更改事项详情
+                </legend>
+                <fieldset>
+                    <input type="hidden" name="index" value="-1" />
+                    <div class="pure-control-group">
+                        <label for="input_check_title">标题</label>
+                        <input id="input_check_title" name="title" type="text" placeholder="..." required />
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="input_check_progress">进度</label>
+                        <input id="input_check_progress" name="progress" type="text" placeholder="..." required />
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="input_check_caution">提醒</label>
+                        <textarea id="input_check_caution" name="caution" type="text" placeholder="..." rows="4"></textarea>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="input_check_summary">总结</label>
+                        <textarea id="input_check_summary" name="summary" type="text" placeholder="..." rows="4"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <button class="pure-button" rel="dialog-close">
+                        关闭
+                    </button>
+                    <button type="submit" class="pure-button pure-button-primary">
+                        确定
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="js/store.js"></script>
+<script src="plugins/dialog/dialog.js"></script>
+<script src="js/form.js"></script>
+<script src="js/check-all.js"></script>
+
+<script src="js/todo/models.js"></script>
+<script src="js/todo/collections.js"></script>
+<script src="js/todo/views.js"></script>
+<script src="js/todo/main.js"></script>
+
+

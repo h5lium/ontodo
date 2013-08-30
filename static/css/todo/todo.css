@@ -1,0 +1,59 @@
+#module_wrapper {
+    width: 100%;
+}
+
+thead th {
+	line-height: 42px;
+	vertical-align: middle;
+}
+thead th.td-check {
+    width: 10px;
+}
+thead th.td-title {
+    width: 200px;
+}
+thead th.td-date {
+    width: 110px;
+    min-width: 110px;
+}
+thead th.td-action {
+    width: 90px;
+    min-width: 90px;
+}
+thead th.td-caution, thead th.td-summary {
+    min-width: 200px;
+}
+
+#todo_table th.td-progress {
+    width: 50px;
+    min-width: 50px;
+}
+
+#todo_header, table {
+    width: 70%;
+    min-width: 900px;
+    margin: auto;
+}
+
+#todo_header h3 {
+    margin-top: 0;
+}
+
+#todo_header {
+	margin-bottom: -16px;
+}
+table {
+	margin-top: 20px;
+}
+table:nth-child(0) {
+	margin-top: 0;
+}
+
+#todo_header .pure-u {
+	margin-right: 40px;
+}
+
+form textarea {
+    width: 55%;
+    resize: none;
+}

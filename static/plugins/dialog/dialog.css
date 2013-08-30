@@ -1,0 +1,23 @@
+.dialog {
+    position: absolute;
+    width: 600px;
+    left: 50%;
+    margin-left: -300px;
+    padding: 20px;
+    
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.96);
+   *background-color: #fff;	/* lte IE 7 */
+    
+    border-radius: 5px;
+    border: solid 1px #000;
+    box-shadow: 0 0 20px #292929;
+    display: none;
+}
+.dialog-open {
+    display: block;
+}
+.dialog-wrapper {
+    width: 450px;
+    margin: auto;
+}
